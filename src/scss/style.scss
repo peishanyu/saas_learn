@@ -1,18 +1,25 @@
 [data-width="25"] {
   width: 25%;
 }
+[data-width="50"] {
+  width: 50%;
+}
+[data-width="100"] {
+  width: 100%;
+}
 
+.v-align-b {vertical-align: bottom;}
 
 html {
     touch-action: manipulation;
     height: 100%;
   
     body {
-      font-family: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-family: "Quicksand", "Helvetica Neue", Helvetica, Arial, sans-serif;
       touch-action: manipulation;
       height: 100%;
       background-color:#093B2C;
-
+      letter-spacing: 1px;
     }
   }
 
@@ -33,19 +40,93 @@ html {
 
   .ic-group {
     display: flex;
+    justify-content: flex-end;
+    
+    .ic {
+      margin: 0 30px;
+      cursor: pointer;
+    }
+    .ic:last-child {
+      margin: 0;
+    }
   }
-
 }
 
-  .container {
-    margin: auto;
-    background-color: #ecd8d8;
-    overflow: auto;
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: 45px;
+  background-color: #033425;
+
+  div {
+    font-size: 15px;
+    color: #FADC91;
+
+    &::before {
+      content:"";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      background: url(../img/footer/ic-brand.svg) no-repeat;
+      vertical-align: sub;
+    }
 
   }
-
-
-
-
 }
 
+.container {
+  overflow: auto;
+
+  .submenu {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #F1F1F1;
+    background: rgb(9,59,44);
+    background: linear-gradient(90deg, rgba(9,59,44,0) 0%, rgba(9,59,44,1) 25%, rgba(29,106,83,1) 50%, rgba(9,59,44,1) 75%, rgba(9,59,44,0) 100%);
+  }
+
+  div.collection:nth-child(2n) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  div.collection:last-child {
+    padding-bottom: 10px;
+  }
+
+  .collection {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    
+
+    &.reverse {
+      flex-direction: column-reverse;
+
+      .item {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    }
+    
+    .item {
+      display: flex;
+      margin-top: 10px;
+
+      img {
+        padding-left:5px;
+        padding-right:5px;
+
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+     }
+  }
+}
